@@ -1,0 +1,106 @@
+/* Background */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Dancing Script', cursive;
+  background: linear-gradient(135deg, #fce7f3, #ede9fe, #e0f2fe);
+  background-size: 400% 400%;
+  animation: bgMove 20s ease infinite;
+  overflow-x: hidden;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Container */
+.letter-container {
+  position: relative;
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+  text-align: center;
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+
+/* Title */
+.title {
+  font-size: 2.5rem;
+  color: #7c3aed;
+  margin-bottom: 30px;
+  animation: fadeDown 1.5s ease;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Letter */
+.letter {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #3b0764;
+  animation: fadeIn 2s ease;
+  text-align: left;
+}
+
+.letter p {
+  margin-bottom: 20px;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Button */
+.next-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 30px;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+.next-btn:hover {
+  background: linear-gradient(135deg, #9333ea, #db2777);
+  transform: scale(1.05);
+}
+
+/* Floating Hearts */
+.hearts {
+  position: absolute;
+  width: 100%; height: 100%;
+  top: 0; left: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.heart {
+  position: absolute;
+  bottom: -50px;
+  color: #ec4899;
+  font-size: 20px;
+  opacity: 0.7;
+  animation: floatUp 7s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(0.8); opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
+}

@@ -1,0 +1,111 @@
+/* Background with lavender gradient */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #c8b6ff, #e0aaff, #b8c0ff);
+  background-size: 400% 400%;
+  animation: bgFlow 18s ease infinite;
+  overflow: hidden;
+}
+
+/* Background smooth animation */
+@keyframes bgFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.quotes-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+/* Quote Box */
+.quote-box {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 30px 50px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  z-index: 2;
+  max-width: 700px;
+  backdrop-filter: blur(10px);
+  animation: boxFloat 6s ease-in-out infinite alternate;
+}
+
+/* Subtle floating box animation */
+@keyframes boxFloat {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-10px); }
+}
+
+#quote-text {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #f8f6ff;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 1.2s ease;
+}
+
+/* Smooth fade-in */
+.show {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1.02);
+}
+
+/* Floating Hearts */
+.hearts {
+  position: absolute;
+  width: 100%; height: 100%;
+  top: 0; left: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+.heart {
+  position: absolute;
+  bottom: -50px;
+  color: #ff4d6d;
+  font-size: 18px;
+  animation: floatUp 7s linear infinite;
+  opacity: 0.6;
+}
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(0.8); opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
+}
+
+/* Love Letter Button */
+.love-btn {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  color: white;
+  padding: 14px 30px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  z-index: 3;
+}
+.love-btn.show {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+.love-btn:hover {
+  background: linear-gradient(135deg, #9333ea, #db2777);
+}

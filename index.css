@@ -1,0 +1,64 @@
+/* Make background gradient with animation */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Centered text styling */
+.center-text {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+  animation: fadeIn 3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive font size for phones */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+.next-btn {
+  position: fixed;       /* Stick to screen */
+  bottom: 40px;          /* Distance from bottom */
+  left: 50%;             /* Center horizontally */
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+.next-btn:hover {
+  transform: translateX(-50%) scale(1.05);
+  background: linear-gradient(135deg, #9333ea, #db2777);
+}
