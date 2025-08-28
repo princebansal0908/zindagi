@@ -28,7 +28,7 @@ let interval = setInterval(() => {
     // 👇 Changed from 1800 to 2000ms
     setTimeout(() => {
       loveBtn.classList.add("show");
-    }, 2000);
+    }, 1000);
   }
 }, 6000);
 
@@ -51,3 +51,4 @@ function createHeart() {
   }, 9000);
 }
 setInterval(createHeart, 700);
+
