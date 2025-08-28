@@ -25,9 +25,10 @@ let interval = setInterval(() => {
     showQuote(currentIndex);
   } else {
     clearInterval(interval);
+    // 👇 Changed from 1800 to 2000ms
     setTimeout(() => {
       loveBtn.classList.add("show");
-    }, 1800);
+    }, 2000);
   }
 }, 6000);
 
